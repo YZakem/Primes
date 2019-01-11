@@ -11,18 +11,18 @@ public class PrimeFinder {
 	}
 	
 	public static void findPrimes() {
+		System.out.println("Let's calculate prime numbers!");
 		System.out.println("Up to how high would you like to check?");
 		Scanner keyboard = new Scanner(System.in);
 		keyboard.useDelimiter("\r?\n");
 		int upTo = keyboard.nextInt();	
 		
-		for (int i = 3; i <= upTo; i++) {
+		for (int i = 3; i <= upTo; i = i + 2) {
 			boolean isPrime = true;
 
 			// Cycle through existing primes to check for new prime
 			for (int j = 0; j < primeArray.size(); j++) {
-
-				if (i%primeArray.get(j) == 0) {
+				if (i % primeArray.get(j) == 0) {
 					isPrime = false;
 					break;
 				}								

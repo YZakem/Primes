@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class PrimeChecker {
 	
-	long number;
-	static int divisibleBy;
+	static long number;
 	static boolean isPrime = true;
 	
 	public static long getNumber() {
@@ -15,8 +14,9 @@ public class PrimeChecker {
 	}
 
 	public static void testNumber(long num) {
+		int divisibleBy = 0;
 		for (int i = 2; i <= Math.sqrt(num); i++) {
-			if (num%i == 0){
+			if (num % i == 0){
 				divisibleBy = i;
 				isPrime = false;
 				break;
@@ -36,7 +36,7 @@ public class PrimeChecker {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		long number = getNumber();
+		number = getNumber();
 		testNumber(number);
 
 	}
